@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>My Social Site</title>
+</head>
+
+<body>
+  <div id="main-container">
+    <div id="header">
+      <h1>My Social Site</h1>
+      <nav>
+        <ul>
+          <li><a href="#" onclick="showLogin()">Login</a></li>
+          <li><a href="#" onclick="showRegister()">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="login-container" class="form-container">
+      <h2>Login</h2>
+      <input type="text" id="login-username" placeholder="Username">
+      <input type="password" id="login-password" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="#" onclick="showRegister()">Register</a></p>
+    </div>
+    <div id="register-container" class="form-container" style="display: none;">
+      <h2>Register</h2>
+      <input type="text" id="register-username" placeholder="Username">
+      <input type="password" id="register-password" placeholder="Password">
+      <input type="password" id="register-confirm-password" placeholder="Confirm Password">
+      <button onclick="register()">Register</button>
+      <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+    </div>
+    <div id="content-container" style="display: none;">
+      <div id="dashboard">
+        <h2>Dashboard</h2>
+        <p>Welcome to your personalized dashboard. Here you can manage your articles and group chats.</p>
+        <div id="article-section">
+          <h3>Your Articles</h3>
+          <ul id="article-list"></ul>
+          <textarea id="article-textarea" placeholder="Write your new article here..." rows="5" cols="50"></textarea>
+          <button onclick="submitArticle()">Submit Article</button>
+        </div>
+        <div id="chat-section">
+          <h3>Group Chats</h3>
+          <div id="chat-room-list">
+            <h4>Available Chat Rooms</h4>
+            <ul id="chat-room-ul"></ul>
+            <input type="text" id="new-chat-room-name" placeholder="Create new chat room name">
+            <button onclick="createChatRoom()">Create Chat Room</button>
+          </div>
+          <div id="chat-room-display">
+            <h4>Chat Room Messages</h4>
+            <ul id="chat-messages"></ul>
+            <input type="text" id="chat-input" placeholder="Type your message">
+            <button onclick="sendChatMessage()">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
